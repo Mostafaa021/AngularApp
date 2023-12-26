@@ -1,12 +1,12 @@
 import { Component , EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DropdownDirective } from '../Shared/dropdown.directive';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  imports :[CommonModule , DropdownDirective],
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent {
 
