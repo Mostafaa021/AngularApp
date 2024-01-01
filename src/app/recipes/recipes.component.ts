@@ -13,7 +13,7 @@ import { RecipeService } from './recipe.service';
   imports: [CommonModule , RecipesListComponent ,RecipeDetailsComponent],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css' , 
-  providers : [RecipeService]
+  providers : [RecipeService] 
 })
 export class RecipesComponent implements OnInit{
 

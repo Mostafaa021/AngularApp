@@ -22,16 +22,17 @@ constructor(private shoppingListServ : ShoppinglistService){
 }
   ngOnInit(): void {
    this.ingredients = this.shoppingListServ.getIngredients();
-   // Second approach
-  //  this.shoppingListServ.ingredientChanged.subscribe(
-  //   (ingredients : Ingredient[])=> {
-  //     this.ingredients= ingredients
-  //   }
-  //  )
-   
+   //Second approach
+   this.shoppingListServ.ingredientChanged.subscribe(
+    (ingredients : Ingredient[])=> {
+      this.ingredients= ingredients
+    }
+    
+   )
+
   }
 
- 
+
 
 
 }

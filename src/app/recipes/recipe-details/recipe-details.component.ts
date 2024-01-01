@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { Recipe } from '../recipe.model';
 import { DropdownDirective } from '../../Shared/dropdown.directive';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -12,9 +13,9 @@ import { DropdownDirective } from '../../Shared/dropdown.directive';
   styleUrl: './recipe-details.component.css'
 })
 export class RecipeDetailsComponent implements OnInit {
-  @Input() recipe: Recipe | undefined;
+  @Input() recipe: Recipe|undefined
 
-  constructor() { 
+  constructor(private recipeService: RecipeService) { 
     
   }
 
@@ -23,7 +24,11 @@ export class RecipeDetailsComponent implements OnInit {
   }
 
    onAddToShoppingList() {
-  //   this.recipeService.addIngredientsToShoppingList(this.recipe?.ingredients);
+    if(this.recipe !== undefined){
+      this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+      
+    }
+    
    }
 
 }
